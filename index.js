@@ -15,4 +15,7 @@ const templateHTML = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf
 // Loop through all url redirect and generate a html page
 for (let [slug, url] of Object.entries(redirects)) {
     console.log('Generating html page for ', slug)
+
+    const html = templateHTML.replaceAll('https://example.com', url)
+    console.log(html)
 }
